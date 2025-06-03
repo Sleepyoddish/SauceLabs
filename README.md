@@ -7,10 +7,10 @@ This is an end-to-end test automation framework using [Playwright](https://playw
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Sleepyoddish/SauceLabs
    cd your-repo
 
-Project Structure
+Project Structure - POM
 │
 ├── tests/                  # Test files
 │   └── test_sample.py
