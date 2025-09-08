@@ -1,9 +1,9 @@
 name: CI - Run Automation Tests
 
 on:
-  push:        # Run when you push code
+  push:
     branches: [ "**" ]
-  pull_request: # Run when someone opens a PR into main
+  pull_request:
 
 jobs:
   test:
@@ -22,12 +22,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Official Playwright Action - installs browsers & caches them
-      - name: Install Playwright Browsers
+      - name: Install Playwright browsers
         run: |
-          npx playwright install --with-deps
+          python -m playwright install --with-deps
 
-      # Run tests
       - name: Run tests
         run: |
           pytest -v
