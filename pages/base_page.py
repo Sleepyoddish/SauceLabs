@@ -11,7 +11,7 @@ class BasePage:
         self.page.goto(BASE_URL)
 
     def login(self):
-        self.page.go_to(BASE_URL)
+        self.go_to()
         self.page.get_by_placeholder("Username").fill(USERNAME)
         self.page.get_by_placeholder("Password").fill(PASSWORD)
         self.page.get_by_role("button", name="login-button")
