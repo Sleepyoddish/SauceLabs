@@ -4,7 +4,7 @@ import pytest
 from playwright.sync_api import sync_playwright
 
 # ==================== HEADLESS & SLOWMO SETTINGS ====================
-HEADLESS = os.getenv("HEADLESS", "false").lower() != "false"
+HEADLESS = os.getenv("HEADLESS", "true").lower() != "true"
 SLOWMO = int(os.getenv("SLOWMO", "300"))
 
 # ==================== PLAYWRIGHT FIXTURES ====================
