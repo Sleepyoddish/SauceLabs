@@ -1,13 +1,13 @@
 import os
-
 import pytest
 from playwright.sync_api import sync_playwright
 
 # ==================== HEADLESS & SLOWMO SETTINGS ====================
-HEADLESS = os.getenv("HEADLESS", "true").lower() == "true"
+# Default: run headed locally, headless in CI
+CI = os.getenv("CI", "false").lower() == "true"
+HEADLESS = CI  # True if running in CI, False if local
 SLOWMO = int(os.getenv("SLOWMO", "300"))
 
-# ==================== PLAYWRIGHT FIXTURES ====================
 @pytest.fixture(scope="session")
 def playwright_instance():
     with sync_playwright() as p:
@@ -16,19 +16,17 @@ def playwright_instance():
 @pytest.fixture(scope="session")
 def browser(playwright_instance):
     print(f"Launching browser with headless={HEADLESS}, slow_mo={SLOWMO}")
-    browser = playwright_instance.chromium.launch(headless=HEADLESS, slow_mo=SLOWMO)
+    browser = playwright_instance.chromium.launch(
+        headless=HEADLESS,
+        slow_mo=SLOWMO
+    )
     yield browser
     browser.close()
 
-@pytest.fixture(scope="function")
-def context(browser):
-    context = browser.new_context(viewport={"width": 1280, "height": 800})
-    yield context
-    context.close()
-
-@pytest.fixture(scope="function")
-def page(context):
+@pytest.fixture
+def page(browser):
+    context = browser.new_context()
     page = context.new_page()
     yield page
-    page.close()
+    context.close()
 

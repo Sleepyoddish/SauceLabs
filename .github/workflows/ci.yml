@@ -8,6 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CI: true  # ensures Playwright runs headless in CI
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
