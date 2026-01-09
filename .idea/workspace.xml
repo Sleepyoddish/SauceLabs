@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8905a0d-dfde-4147-95b9-d47bdfa71228" name="Changes" comment="updated CI file">
-      <change afterPath="$PROJECT_DIR$/data/login_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/product_page_data.py" afterDir="false" />
+    <list default="true" id="b8905a0d-dfde-4147-95b9-d47bdfa71228" name="Changes" comment="added methods and tests for product_page">
+      <change afterPath="$PROJECT_DIR$/pages/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pages/api/login_api_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/product_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/api/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/api/test_login_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_product_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.envs/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/.envs/.env.local" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_login_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +39,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for tests.api.test_login_api.test_login_api.executor": "Run",
-    "Python tests.Python tests for tests.test_login_page.test_login_page_errors.executor": "Run",
-    "Python tests.Python tests for tests.test_product_page.test_product_list.executor": "Run",
-    "Python tests.Python tests for tests.test_product_page.test_product_page_header.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for tests.api.test_login_api.test_login_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_login_page.test_login_page_errors.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_product_page.test_product_list.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_product_page.test_product_page_header.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zoelyon/PycharmProjects/SauceLabs&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.envs" />
@@ -139,11 +135,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python tests.Python tests for test_login_page.test_login_page_header" />
       <item itemvalue="Python tests.Python tests for tests.api.test_login_api.test_login_api" />
+      <item itemvalue="Python tests.Python tests for tests.test_login_page.test_login_page_errors" />
       <item itemvalue="Python tests.Python tests for tests.test_product_page.test_product_list" />
       <item itemvalue="Python tests.Python tests for tests.test_product_page.test_product_page_header" />
-      <item itemvalue="Python tests.Python tests for test_login_page.test_login_page_header" />
-      <item itemvalue="Python tests.Python tests for tests.test_login_page.test_login_page_errors" />
     </list>
     <recent_temporary>
       <list>
@@ -266,7 +262,31 @@
       <option name="project" value="LOCAL" />
       <updated>1757347216489</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updated CI file to run headless, updated local to run headed based on .env file">
+      <option name="closed" value="true" />
+      <created>1757433577791</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757433577791</updated>
+    </task>
+    <task id="LOCAL-00014" summary="abstracted data out of login_page and created login_data file">
+      <option name="closed" value="true" />
+      <created>1757433599048</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757433599048</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added methods and tests for product_page">
+      <option name="closed" value="true" />
+      <created>1757433610572</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1757433610572</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -275,6 +295,17 @@
     <MESSAGE value="setting up CI" />
     <MESSAGE value="updated CI" />
     <MESSAGE value="updated CI file" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated CI file" />
+    <MESSAGE value="updated CI file to run headless, updated local to run headed based on .env file" />
+    <MESSAGE value="abstracted data out of login_page and created login_data file" />
+    <MESSAGE value="added methods and tests for product_page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added methods and tests for product_page" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
